@@ -4,19 +4,20 @@
     <title>JavaScript heute</title>
     <meta charset="utf-8">
     <style>
-			@import url(https://fonts.googleapis.com/css?family=Ubuntu);
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
       @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
 
-      body { font-family: 'Ubuntu'; }
+      body { font-family: 'Droid Serif'; }
       h1, h2, h3 {
-        font-family: 'Ubuntu';
+        font-family: 'Yanone Kaffeesatz';
         font-weight: normal;
       }
       .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
     </style>
   </head>
   <body>
-		<textarea id="source"></textarea>
+		<textarea id="source" style="display: none;"></textarea>
 		<script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
 		</script>
 		<script>
@@ -27,7 +28,9 @@
 					click: true
 				},
 				highlightStyle: 'monokai',
-				highlightLines: true
+				highlightLines: true,
+				slideNumberFormat: '%current% of %total%',
+				countIncrementalSlides: true
 			});
     </script>
   </body>
