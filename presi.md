@@ -103,7 +103,7 @@ console.log(msg.startsWith('Hello'));  // true
 console.log(msg.endsWith('!')); // true
 console.log(msg.includes('o')); // true
 
-let name = "Martin"
+let name = 'Martin';
 console.log(`Hello ${name}`); // Hello Martin
 ```
 
@@ -129,24 +129,20 @@ background-image: url(background.png)
 
 ```JavaScript
 function makeRequest(url, cb = function() {}) {
-}		
-
+}
 function pick(first, ...rest) {
   // first === 'a', rest === [1, 2, 3]
 } 	
 pick('a', 1, 2, 3);
 
-let values = [25, 100]
-// console.log(Math.max(25, 100));  	
+let values = [25, 100];
+// console.log(Math.max(25, 100));
 console.log(Math.max(...values));
 
-function doSomething() {}
-console.log(doSomething.name);  // "doSomething"
-
-let sum = (num1, num2) => num1 + num2;		
-let getName = () => 'Martin';
-
-let doNothing = () => {};
+function doSomething() {
+	// the function code
+}
+console.log(doSomething.name);  // doSomething
 ```
 
 ---
