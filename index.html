@@ -5,11 +5,6 @@
     <meta charset="utf-8">
     <style>
 			@import url(https://fonts.googleapis.com/css?family=Ubuntu);
-
-			/* @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
-      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
-			*/
-
       @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
 
       body { font-family: 'Ubuntu'; }
@@ -22,9 +17,10 @@
   </head>
   <body>
 		<textarea id="source"></textarea>
-    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js" />
-    <script type="text/javascript">
-      var slideshow = remark.create({
+		<script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+		</script>
+		<script>
+			var slideshow = remark.create({
 				sourceUrl: 'presi.md',
 				ratio: '16:9',
 				navigation: {
