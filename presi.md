@@ -134,7 +134,7 @@ background-image: url(img/background.png)
 Bei der Verwendung von callback Funktionen, den _this_-Kontext sichern!
 
 ```JavaScript
-function doSomething() {
+function UiComponent() {
   var _this = this;
   var that = this;
   var self = this;
