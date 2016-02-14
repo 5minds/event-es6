@@ -19,3 +19,5 @@ Agenda
   - ES2017:
     - async/await - Die nächste Möglichkeit mit asynchronen Funktionen umzugehen!!
     - Object.values() und Object.entries()
+- Danke
+  - auch an Ryan Dahl, Axel Rauschmayer und Ole Petter Bang
