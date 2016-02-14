@@ -247,13 +247,28 @@ class: middle
 background-image: url(img/background_mehr-erfahren.png)
 
 .right-column[
-  # Wo kann ich erfahren ...
+# Wo kann ich mehr erfahren ...
 
-  - Dr. Axel Rauschmayer
-    - EXPLORING ES6 (http://exploringjs.com)
-    - Blog (http://www.2ality.com)
-  - Nicholas C. Zakas
-    - Understanding ECMAScript 6 (https://github.com/nzakas/understandinges6)
+- Dr. Axel Rauschmayer
+  - EXPLORING ES6 (http://exploringjs.com)
+  - Blog (http://www.2ality.com)
+- Nicholas C. Zakas
+  - Understanding ECMAScript 6 (https://github.com/nzakas/understandinges6)
+]
+
+---
+class: middle
+background-image: url(img/background.png)
+
+.right-column[
+# Was kommt danach ...
+- Jedes! Jahr eine offizielle Erweiterung von JavaScript.
+  - Nach dem Motto: _Was fertig ist kommt rein._
+- ES 2016
+  - _Array.includes()_ - wir haben 2016!
+- ES 2017
+  - Async - die nächste Variante: _async_ + _await_
+  - _Object.values()_ und _Object.entries()_
 ]
 
 ---
@@ -262,4 +277,4 @@ background-image: url(img/background.png)
 
 # Danke ;-)
 ##### Auch an:
-###### Ryan Dahl (für Node.js) & Dr. Axel Rauschmayer (für Speaking JavaScript) & Ole Ole Petter Bang (für [Remark](http://remarkjs.com))
+###### Ryan Dahl (für [Node.js](https://www.youtube.com/watch?v=ztspvPYybIY)) & Dr. Axel Rauschmayer (für [Speaking JavaScript](http://speakingjs.com)) & Ole Ole Petter Bang (für [Remark](http://remarkjs.com))
