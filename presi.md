@@ -1,8 +1,8 @@
 class: center, middle
 background-image: url(img/background.png)
 
-### Meine Eindrücke von und Erfahrungen mit
-# ES6
+### Meine Eindrücke und Erfahrungen mit
+# ES6 aka ES 2015
 
 ---
 background-image: url(img/background_martin.png)
@@ -10,12 +10,13 @@ background-image: url(img/background_martin.png)
 .right-column[
 # _Hi_ - eine kurze Vorstellung
 
-- Martin Möllenbeck - @moellenbeck
+- Martin Möllenbeck
 - Gründer der 5Minds (http://www.5minds.de)
 - Professioneller Entwickler (~25 Jahren)
   - Backend-/Messaging-Systeme
   - High-Performance Webseiten (u.a. Livetiming DTM)
   - JavaScript, Elixir, Python, C#/F#
+- Twitter, Github, Slack ... -> @moellenbeck
 ]
 
 ---
@@ -24,10 +25,11 @@ background-image: url(img/background.png)
 .right-column[
 # ES6 Erfahrung
 
-- seid 2014 in Projekten
+- seid 2014 in unterschiedlichen Projekten
 - (fast) immer  (nur) auf dem Server
 - Zuerst mit Traceur
 - Seid Node.js 4.x auf dem Server ohne Transpiler
+- Wenn auf dem Client dann Babel
 ]
 
 ---
@@ -159,7 +161,7 @@ Mit arrow-Function ist es (für mich) viel einfacher geworden:
 ```JavaScript
 function doSomething() {
   document.addEventListener('click', () => {
-    this... /* ist was es sein sollte ;-) */
+    this... /* ist was erwartet wird ;-) */
   });
 }
 ```
@@ -188,7 +190,7 @@ background-image: url(img/background.png)
 background-image: url(img/background.png)
 
 .right-column[
-Strings verketten war immer schon eine sehr __übersichtliche__ Angelegenheit.
+Strings verketten war immer schon eine sehr __unübersichtliche__ Angelegenheit.
 ```JavaScript
 var firstVar = 1 + ' Eintrag wurde am ' + tag + '. Tag ' +
    'der Woche erstellt.';
@@ -218,22 +220,47 @@ const secondVar = `Neque porro quisquam est qui
 class: center, middle
 background-image: url(img/background.png)
 
-# Async ohne callbacks?
-#### Was geht mit Promises oder co-Routinen?
-
----
-class: center, middle
-background-image: url(img/background.png)
-
 # Prototype, Vererbung?
 #### Klassen in JavaScript.
 
 ---
-class: center, middle
 background-image: url(img/background.png)
 
-# Prototype, Vererbung?
-#### Klassen in JavaScript.
+.right-column[
+# Vererbung mit Prototypen
+```JavaScript
+const util = require('util');
+function BaseClass() {
+}
+function DerivedClass() {
+    BaseClass.call(this);
+}
+util.inherits(BaseClass, DerivedClass);
+
+```
+Aus der [API]((https://nodejs.org/dist/latest-v5.x/docs/api/util.html#util_util_inherits_constructor_superconstructor):
+> As an additional convenience, _superConstructor_ will be
+> accessible through the _constructor.super__ property.
+]
+
+---
+background-image: url(img/background.png)
+
+.right-column[
+# Klassen
+```JavaScript
+class BaseClass {
+  constructor() {
+  }
+}
+
+class DerivedClass extends BaseClass {
+  constructor() {
+    super();
+  }
+}
+```
+]
 
 ---
 class: center, middle
@@ -242,6 +269,58 @@ background-image: url(img/background.png)
 # Was kommt nach CommonJS, AMD?
 #### Sind Module die Lösung.
 
+---
+background-image: url(img/background.png)
+
+.right-column[
+# Module mit CommonJS bzw. Node.js
+```JavaScript
+// module1.js
+exports.myFunction = function() {
+  console.log('module1');
+}
+
+// module2.js
+const module1 = require('./module1');
+module1.myFunction();
+```
+]
+---
+background-image: url(img/background.png)
+
+.right-column[
+# Module mit AMD (Browser)
+```JavaScript
+define("Name des Moduls", ["Abhängigkeit1", "Abhängigkeit2"], factory);
+
+define('PieChartModule', ['area', 'graph'],
+    function (area, graph) {
+        var plotModuleExport = {
+           plot: function(width, height, data) {
+             return graph.drawPie(area.randomGrid(width, height), data);
+           }        
+        };
+        return plotModuleExport;
+    };
+});
+```
+]
+---
+background-image: url(img/background.png)
+
+.right-column[
+# Module mit ES6
+```JavaScript
+// module1.js
+export function myFunction() {
+  console.log('module1');
+}
+
+// module2.js
+import * as module1 from './module1';
+module1.myFunction();
+```
+]
 ---
 class: middle
 background-image: url(img/background_mehr-erfahren.png)
