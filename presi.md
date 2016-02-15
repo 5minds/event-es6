@@ -158,7 +158,7 @@ function UiComponent() {
     console.log(_this.myVar);
   });
 
-  /* oder */
+  /* oder bind */
   document.addEventListener('click', function bindClickHandler() {
     console.log(this.myVar);    // hier funktioniert this wie gewohnt
   }.bind(this));
@@ -351,6 +351,79 @@ export function myFunction() {
 import * as module1 from './module1';
 module1.myFunction();
 ```
+]
+
+---
+class: center, middle
+background-image: url(img/background.png)
+
+# Async
+## Callback, Promises, Coroutines
+
+---
+background-image: url(img/background.png)
+
+.right-column[
+**Callback**
+```JavaScript
+const fs = require('fs');
+
+fs.readFile('Readme.md', 'utf8', function(err, str) {
+  let newStr = str.replace('Something', 'Else');
+
+  fs.writeFile('Readme_callback.md', newStr, function(err) {
+    // done
+  });
+});
+```
+
+]
+
+---
+background-image: url(img/background.png)
+
+.right-column[
+**Promises**
+```JavaScript
+const fs = require('fs');
+function read(path) {
+  return new Promise((resolve, reject) => {
+    fs.readFile(path, 'utf8', (err, str) => {
+      resolve(str.replace('Something', 'Else'));
+    });
+  })
+}
+function write(path, str) {
+  return new Promise((res, rej) => { fs.writeFile(path, str, res); });
+}
+read('Readme.md')
+  .then((str) => { return write('Readme_promise.md', str); })
+  .then(() => { console.log('done'); });
+```
+
+]
+
+---
+background-image: url(img/background.png)
+
+.right-column[
+**Coroutines**
+```JavaScript
+const co = require('co');
+const fs = require('fs');
+function read(path) {
+  return function(done) { fs.readFile(path, 'utf8', done); }
+}
+function write(path, str, fn) {
+  return function(done) { fs.writeFile(path, str, done); };
+}
+co(function *(){
+  let str = yield read('Readme.md');
+  str = str.replace('Something', 'Else');
+  yield write('Readme_co.md', str);
+});
+```
+
 ]
 
 ---
