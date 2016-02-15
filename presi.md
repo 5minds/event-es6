@@ -12,25 +12,35 @@ background-image: url(img/background_martin.png)
 
 - Martin Möllenbeck
 - Gründer der 5Minds (http://www.5minds.de)
-- Professioneller Entwickler (~25 Jahren)
-  - Backend-/Messaging-Systeme
-  - High-Performance Webseiten (u.a. Livetiming DTM)
-  - JavaScript, Elixir, Python, C#/F#
-- Twitter, Github, Slack ... -> @moellenbeck
+- @moellenbeck auf Twitter, Github, Slack ...
+- JavaScript auf dem Server?
+   - Weil JavaScript in Datenbank, Server, Client **geht**!
 ]
 
 ---
 class:
-background-image: url(img/background.png)
+background-image: url(img/background_erfahrung.png)
 
 .right-column[
 # ES6 Erfahrung
 
 - seit 2014 in unterschiedlichen Projekten
+  - u.a. Livetiming DTM, Agentensystem für Telematikdaten
 - (fast) immer  (nur) auf dem Server
 - Zuerst mit Traceur
 - Seid Node.js 4.x auf dem Server ohne Transpiler
 - Wenn auf dem Client dann Babel
+]
+
+---
+class:
+background-image: url(img/background_teilen.png)
+
+.right-column[
+# ES6 Erfahrungen teilen
+- Fragen direkt stellen
+- Auch Einwände äußern
+- Andere Meinung sagen
 ]
 
 ---
@@ -48,19 +58,17 @@ background-image: url(img/background.png)
 ```JavaScript
 /* Crockford empfiehlt */
 (function(){
-  /* Code, der keine Zeiteffekte hervorruft */
+  /* Code, der keine Seitenffekte hervorruft */
+  var myVar = 1;
 }());
 
-/* Dies funktioniert auch */
-(function(){
-  /* Code, der keine Zeiteffekte hervorruft*/
-})();
+/* raise - ReferenceError: myVar is not defined */
+console.log(myVar);
 ```
-**Nur die Klammern machen den Unterschied**
+*IIFE -> Immediately-Invoked Function Expression*
 ]
 
 ---
-class:
 background-image: url(img/background.png)
 
 .right-column[
@@ -74,6 +82,7 @@ background-image: url(img/background.png)
 /* raise - ReferenceError: myVar is not defined */
 console.log(myVar);
 ```
+Hilfe bei _if_, _for_ und auch _foreach_
 ]
 
 ---
@@ -124,8 +133,8 @@ const myVar = [1, 2];
 myVar.push(3);
 ```
 
-Es ist nur die Variable _myVar_ konstant.
-Array ist ein Referenztyp und das Array bleibt das gleiche Objekt!
+Es ist nur die Variable _myVar_ konstant. <br />
+Array ist ein Referenztyp und das Array bleibt die gleiche Objektinstanz!
 ]
 
 ---
@@ -143,16 +152,15 @@ background-image: url(img/background.png)
 
 ```JavaScript
 function UiComponent() {
-  var _this = this;
-  var that = this;
-  var self = this;
+  var _this = this; // manchmal that oder self, nur nicht einheitlich
+  _this.myVar = 1;
   document.addEventListener('click', function onClickHandler() {
-    _this... /* oder */ that... /* oder */ self...
+    console.log(_this.myVar);
   });
 
   /* oder */
   document.addEventListener('click', function bindClickHandler() {
-    this... /* hier funktioniert this wie gewohnt */
+    console.log(this.myVar);    // hier funktioniert this wie gewohnt
   }.bind(this));
 }
 ```
@@ -162,12 +170,14 @@ function UiComponent() {
 background-image: url(img/background.png)
 
 .right-column[
-**Mit arrow-Function ist es (für mich) viel einfacher geworden:**
+**Mit ()=>-Function ist es (für mich) viel einfacher geworden:**
 
 ```JavaScript
 function doSomething() {
+  this.myVar = 1;
+
   document.addEventListener('click', () => {
-    this... /* ist was erwartet wird ;-) */
+    console.log(this.myVar); /* ist was erwartet wird ;-) */
   });
 }
 ```
@@ -219,8 +229,13 @@ background-image: url(img/background.png)
 const firstVar = `1 Eintrag wurde am ${tag}. Tag der Woche erstellt.`;
 
 const secondVar = `Neque porro quisquam est qui
-   dolorem ipsum quia dolor sit amet, consectetur,
-   adipisci velit...`;
+dolorem ipsum quia dolor sit amet, consectetur,
+adipisci velit...`;
+
+console.log(secondVar);
+//Neque porro quisquam est qui
+//dolorem ipsum quia dolor sit amet, consectetur,
+//adipisci velit...`
 ```
 ]
 
@@ -247,7 +262,7 @@ function DerivedClass() {
 util.inherits(BaseClass, DerivedClass);
 
 ```
-Aus der [API](https://nodejs.org/dist/latest-v5.x/docs/api/util.html#util_util_inherits_constructor_superconstructor):
+Aus der [Node.js-API](https://nodejs.org/dist/latest-v5.x/docs/api/util.html#util_util_inherits_constructor_superconstructor):
 > As an additional convenience, _superConstructor_ will be
 > accessible through the *constructor.super_* property.
 ]
@@ -261,6 +276,9 @@ background-image: url(img/background.png)
 ```JavaScript
 class BaseClass {
   constructor() {
+  }
+
+  functionInBase() {
   }
 }
 
@@ -334,6 +352,27 @@ import * as module1 from './module1';
 module1.myFunction();
 ```
 ]
+
+---
+class: top
+background-image: url(img/background.png)
+
+.right-column[
+**Was kommt als nächstes...**
+
+- Jedes! Jahr eine offizielle Erweiterung von JavaScript.
+    Nach dem Motto: _Was fertig ist kommt rein._
+
+- ES 2016
+
+    _Array.includes()_ - wir haben 2016!
+
+- ES 2017
+
+    Async - die nächste Variante: _async_ + _await_ <br />
+    _Object.values()_ und _Object.entries()_
+]
+
 ---
 class: top
 background-image: url(img/background_mehr-erfahren.png)
@@ -350,26 +389,6 @@ background-image: url(img/background_mehr-erfahren.png)
 - Nicholas C. Zakas
 
     [Understanding ECMAScript 6](https://github.com/nzakas/understandinges6)
-]
-
----
-class: top
-background-image: url(img/background.png)
-
-.right-column[
-**Was kommt...**
-
-- Jedes! Jahr eine offizielle Erweiterung von JavaScript.
-    Nach dem Motto: _Was fertig ist kommt rein._
-
-- ES 2016
-
-    _Array.includes()_ - wir haben 2016!
-
-- ES 2017
-
-    Async - die nächste Variante: _async_ + _await_
-    _Object.values()_ und _Object.entries()_
 ]
 
 ---
