@@ -10,11 +10,9 @@ background-image: url(img/background_martin.png)
 .right-column[
 # _Hi_ - eine kurze Vorstellung
 
-- Martin Möllenbeck
 - Gründer der 5Minds (http://www.5minds.de)
 - @moellenbeck auf Twitter, Github, Slack ...
-- JavaScript auf dem Server?
-   - Weil JavaScript in Datenbank, Server, Client **geht**!
+- JavaScript Fan ...
 ]
 
 ---
@@ -28,19 +26,8 @@ background-image: url(img/background_erfahrung.png)
   - u.a. Livetiming DTM, Agentensystem für Telematikdaten
 - (fast) immer  (nur) auf dem Server
 - Zuerst mit Traceur
-- Seid Node.js 4.x auf dem Server ohne Transpiler
+- Seid Node.js 4.x auf dem Server ohne Transpiler!
 - Wenn auf dem Client dann Babel
-]
-
----
-class:
-background-image: url(img/background_teilen.png)
-
-.right-column[
-# ES6 Erfahrungen teilen
-- Fragen direkt stellen
-- Auch Einwände äußern
-- Andere Meinung sagen
 ]
 
 ---
