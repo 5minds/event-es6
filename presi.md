@@ -17,13 +17,19 @@ background-image: url(img/background_martin.png)
 
 ---
 class:
-background-image: url(img/background_erfahrung.png)
+background-image: url(img/dtm.png)
+
+???
+DTM gestartet Sommer 2012
+---
+class:
+background-image: url(img/background.png)
 
 .right-column[
 # ES6 Erfahrung
 
 - seit 2014 in unterschiedlichen Projekten
-  - u.a. Livetiming DTM, Agentensystem für Telematikdaten
+  - u.a. [Livetiming DTM](http://www.heise.de/developer/artikel/Echtzeitergebnisanzeige-fuer-Motorsportrennen-mit-JavaScript-1815473.html), Agentensystem für Telematikdaten
 - (fast) immer  (nur) auf dem Server
 - Zuerst mit Traceur
 - Seid Node.js 4.x auf dem Server ohne Transpiler!
